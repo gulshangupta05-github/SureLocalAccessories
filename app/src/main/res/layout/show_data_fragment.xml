@@ -1,0 +1,94 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+    <RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+        xmlns:tools="http://schemas.android.com/tools"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        tools:context=".showdata.ShowDataFragment">
+
+        <TextView
+            android:id="@+id/et_name"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="20dp"
+            android:gravity="center_horizontal"
+            android:text="Name"
+            android:textAlignment="center"
+            android:textColor="#000"
+            android:textSize="25dp" />
+
+        <TextView
+            android:id="@+id/et_mobile"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/et_name"
+            android:text="Mobile"
+            android:textAlignment="center"
+            android:textColor="#3C3333"
+            android:textSize="13dp"
+            android:gravity="center_horizontal" />
+
+        <TextView
+            android:id="@+id/et_email"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/et_mobile"
+            android:layout_marginTop="5dp"
+            android:gravity="center_horizontal"
+            android:text="Email"
+            android:textAlignment="center"
+            android:textColor="#884141" />
+
+        <TextView
+            android:id="@+id/et_emp_roll"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/et_email"
+            android:layout_marginTop="5dp"
+            android:textSize="18dp"
+            android:gravity="center_horizontal"
+            android:text="Employee Roll"
+            android:textAlignment="center"
+            android:textColor="#000" />
+
+        <TextView
+            android:id="@+id/et_monitor_model_no"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/et_emp_roll"
+            android:layout_marginTop="5dp"
+            android:gravity="center_horizontal"
+            android:text="Monitor / Model no"
+            android:textSize="18dp"
+            android:textAlignment="center"
+            android:textColor="#000" />
+
+        <TextView
+            android:id="@+id/et_key_mouse"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/et_monitor_model_no"
+            android:layout_marginTop="5dp"
+            android:gravity="center_horizontal"
+            android:text="KeyBoard and mouse model no"
+            android:textSize="18dp"
+            android:textAlignment="center"
+            android:textColor="#000" />
+
+        <TextView
+            android:id="@+id/et_all_wires"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/et_key_mouse"
+            android:layout_marginTop="5dp"
+            android:gravity="center_horizontal"
+            android:text="All wires"
+            android:textSize="18dp"
+            android:textAlignment="center"
+            android:textColor="#000" />
+
+    </RelativeLayout>
+</ScrollView>
