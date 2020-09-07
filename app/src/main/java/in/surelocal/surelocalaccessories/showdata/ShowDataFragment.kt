@@ -43,24 +43,25 @@ class ShowDataFragment : Fragment() {
         val empMonitor = et_monitor_model_no.toString().trim()
         val empKeyboard = et_key_mouse.toString().trim()
         val empAllwires = et_all_wires.toString().trim()
-        firestore.collection("accessories").document("WNyitSXXD0HMZdScLbbX").get()
-            .addOnSuccessListener {
-//            it.forEach {
-                val document_id=it.id
-//                val users = it.toObject(EmpdetailsGet::class.java)
-                mDatas.add(
-                    EmpdetailsGet(
-                        document_id = document_id,
-                        user_name = empName,
-                        user_mobile = empMobile,
-                        user_email = empEmail,
-                        user_monitor_modelno = empMonitor,
-                        user_keyboard_mouse = empKeyboard,
-                        user_EmpRoll = empRoll,
-                        user_allwires = empAllwires
-                    )
-                )
-//            }
+//        firestore.collection("accessories").document("WNyitSXXD0HMZdScLbbX").get()
+//            .addOnSuccessListener {
+//                Log.d(TAG, "onActivityCreated: ${it.data}")
+//                et_email.text = "dks"
+//
+//        }.addOnFailureListener {
+//            Log.d(TAG, "onActivityCreated: ${it.message}")
+//        }
+        firestore.collection("accessories").document("WOqqR5OeWGQnTyMwHYiL").get().addOnSuccessListener {
+            Log.d(TAG, "onActivityCreated: ${it.data!!["user_name"]}")
+            Log.d(TAG, "onActivityCreated: ${it.data!!["user_mobile"]}")
+            et_name.text= it.data!!["user_name"].toString()
+            et_mobile.text= it.data!!["user_mobile"].toString()
+            et_email.text = it.data!!["user_email"].toString()
+            et_emp_roll.text = it.data!!["user_EmpRoll"].toString()
+            et_monitor_model_no.text= it.data!!["user_monitor_modelno"].toString()
+            et_key_mouse.text= it.data!!["user_keyboard_mouse"].toString()
+            et_all_wires.text= it.data!!["user_allwires"].toString()
+
 
         }.addOnFailureListener {
             Log.d(TAG, "onActivityCreated: ${it.message}")
