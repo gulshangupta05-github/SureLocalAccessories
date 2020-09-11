@@ -1,16 +1,16 @@
 <?xml version="1.0" encoding="utf-8"?>
 <ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent">
 
-    <RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
-        xmlns:tools="http://schemas.android.com/tools"
+    <RelativeLayout
         android:layout_width="match_parent"
         android:layout_height="match_parent"
         tools:context=".showdata.ShowDataFragment">
 
         <TextView
-            android:id="@+id/et_name"
+            android:id="@+id/tv_name"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_marginTop="20dp"
@@ -21,21 +21,21 @@
             android:textSize="25dp" />
 
         <TextView
-            android:id="@+id/et_mobile"
+            android:id="@+id/tv_mobile"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:layout_below="@+id/et_name"
+            android:layout_below="@+id/tv_name"
+            android:gravity="center_horizontal"
             android:text="Mobile"
             android:textAlignment="center"
             android:textColor="#3C3333"
-            android:textSize="13dp"
-            android:gravity="center_horizontal" />
+            android:textSize="13dp" />
 
         <TextView
-            android:id="@+id/et_email"
+            android:id="@+id/tv_email"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:layout_below="@+id/et_mobile"
+            android:layout_below="@+id/tv_mobile"
             android:layout_marginTop="5dp"
             android:gravity="center_horizontal"
             android:text="Email"
@@ -43,52 +43,70 @@
             android:textColor="#884141" />
 
         <TextView
-            android:id="@+id/et_emp_roll"
+            android:id="@+id/tv_emp_role"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:layout_below="@+id/et_email"
+            android:layout_below="@+id/tv_email"
             android:layout_marginTop="5dp"
-            android:textSize="18dp"
             android:gravity="center_horizontal"
             android:text="Employee Roll"
             android:textAlignment="center"
-            android:textColor="#000" />
+            android:textColor="#000"
+            android:textSize="18dp" />
 
         <TextView
-            android:id="@+id/et_monitor_model_no"
+            android:id="@+id/tv_monitor_model"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:layout_below="@+id/et_emp_roll"
+            android:layout_below="@+id/tv_emp_role"
             android:layout_marginTop="5dp"
             android:gravity="center_horizontal"
             android:text="Monitor / Model no"
-            android:textSize="18dp"
             android:textAlignment="center"
-            android:textColor="#000" />
+            android:textColor="#000"
+            android:textSize="18dp" />
 
         <TextView
-            android:id="@+id/et_key_mouse"
+            android:id="@+id/tv_key_mouse"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:layout_below="@+id/et_monitor_model_no"
+            android:layout_below="@+id/tv_monitor_model"
             android:layout_marginTop="5dp"
             android:gravity="center_horizontal"
             android:text="KeyBoard and mouse model no"
-            android:textSize="18dp"
             android:textAlignment="center"
-            android:textColor="#000" />
+            android:textColor="#000"
+            android:textSize="18dp" />
 
         <TextView
-            android:id="@+id/et_all_wires"
+            android:id="@+id/tv_all_wires"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:layout_below="@+id/et_key_mouse"
+            android:layout_below="@+id/tv_key_mouse"
             android:layout_marginTop="5dp"
             android:gravity="center_horizontal"
             android:text="All wires"
-            android:textSize="18dp"
             android:textAlignment="center"
-            android:textColor="#000" />
+            android:textColor="#000"
+            android:textSize="18dp" />
+
+        <Button
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/tv_all_wires"
+            android:layout_marginStart="10dp"
+            android:layout_marginLeft="10dp"
+            android:layout_marginTop="43dp"
+            android:layout_marginEnd="10dp"
+            android:layout_marginRight="10dp"
+            android:layout_marginBottom="10dp"
+            android:id="@+id/et_edit_employee"
+            android:background="#53A844"
+            android:text="Edit Employee Form" />
+        <!--        <TextView-->
+        <!--            android:layout_width="wrap_content"-->
+        <!--            android:layout_height="wrap_content"-->
+        <!--            android:id="@+id/tv_doc_id_get"/>-->
 
     </RelativeLayout>
 </ScrollView>

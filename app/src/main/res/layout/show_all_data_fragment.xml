@@ -1,0 +1,72 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+    <RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+        xmlns:tools="http://schemas.android.com/tools"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        tools:context=".showdata.ShowDataFragment">
+
+        <TextView
+            android:id="@+id/tv_name"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="20dp"
+            android:gravity="center_horizontal"
+            android:text="Name"
+            android:textAlignment="center"
+            android:textColor="#000"
+            android:textSize="25dp" />
+
+        <TextView
+            android:id="@+id/tv_mobile"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/tv_name"
+            android:text="Mobile"
+            android:textAlignment="center"
+            android:textColor="#3C3333"
+            android:textSize="13dp"
+            android:gravity="center_horizontal" />
+
+        <TextView
+            android:id="@+id/tv_other1"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/tv_mobile"
+            android:layout_marginTop="5dp"
+            android:gravity="center_horizontal"
+
+            android:textAlignment="center"
+            android:textColor="#884141" />
+
+        <TextView
+            android:id="@+id/tv_other2"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/tv_other1"
+            android:layout_marginTop="5dp"
+            android:textSize="18dp"
+            android:gravity="center_horizontal"
+
+            android:textAlignment="center"
+            android:textColor="#000" />
+
+        <TextView
+            android:id="@+id/tv_other3"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/tv_other2"
+            android:layout_marginTop="5dp"
+            android:gravity="center_horizontal"
+
+            android:textSize="18dp"
+            android:textAlignment="center"
+            android:textColor="#000" />
+
+
+
+    </RelativeLayout>
+</ScrollView>

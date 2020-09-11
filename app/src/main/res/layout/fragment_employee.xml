@@ -71,48 +71,76 @@
                 android:inputType="text" />
         </com.google.android.material.textfield.TextInputLayout>
 
-        <com.google.android.material.textfield.TextInputLayout
-            android:id="@+id/tilMonitermodel"
+<!--        <com.google.android.material.textfield.TextInputLayout-->
+<!--            android:id="@+id/tilMonitermodel"-->
+<!--            android:layout_width="match_parent"-->
+<!--            android:layout_height="wrap_content"-->
+<!--            android:hint="Monitor/Model no">-->
+
+<!--            <EditText-->
+<!--                android:id="@+id/et_monitor_model"-->
+<!--                android:layout_width="match_parent"-->
+<!--                android:layout_height="wrap_content"-->
+<!--                android:imeOptions="actionNext"-->
+<!--                android:inputType="text" />-->
+<!--        </com.google.android.material.textfield.TextInputLayout>-->
+
+<!--        <com.google.android.material.textfield.TextInputLayout-->
+<!--            android:id="@+id/tilkayboard_mouse"-->
+<!--            android:layout_width="match_parent"-->
+<!--            android:layout_height="wrap_content"-->
+<!--            android:hint="Keyboard/Mouse">-->
+
+<!--            <EditText-->
+<!--                android:id="@+id/et_keyboard_mouse"-->
+<!--                android:layout_width="match_parent"-->
+<!--                android:layout_height="wrap_content"-->
+<!--                android:imeOptions="actionDone"-->
+<!--                android:inputType="text" />-->
+<!--        </com.google.android.material.textfield.TextInputLayout>-->
+
+<!--        <com.google.android.material.textfield.TextInputLayout-->
+<!--            android:id="@+id/tilAllwires"-->
+<!--            android:layout_width="match_parent"-->
+<!--            android:layout_height="wrap_content"-->
+<!--            android:hint="All Wires">-->
+
+<!--            <EditText-->
+<!--                android:id="@+id/etwires"-->
+<!--                android:layout_width="match_parent"-->
+<!--                android:layout_height="wrap_content"-->
+<!--                android:imeOptions="actionDone"-->
+<!--                android:inputType="text"-->
+<!--                android:maxLength="200" />-->
+<!--        </com.google.android.material.textfield.TextInputLayout>-->
+
+
+        <Spinner
+            android:id="@+id/spinner_Monitor"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:hint="Monitor/Model no">
-
-            <EditText
-                android:id="@+id/et_monitor_model"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:imeOptions="actionNext"
-                android:inputType="text" />
-        </com.google.android.material.textfield.TextInputLayout>
-
-        <com.google.android.material.textfield.TextInputLayout
-            android:id="@+id/tilkayboard_mouse"
+            android:layout_marginTop="30dp" />
+       <Spinner
+            android:id="@+id/spinner_keyboard_mouse"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:hint="Keyboard/Mouse">
-
-            <EditText
-                android:id="@+id/et_keyboard_mouse"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:imeOptions="actionDone"
-                android:inputType="text" />
-        </com.google.android.material.textfield.TextInputLayout>
-
-        <com.google.android.material.textfield.TextInputLayout
-            android:id="@+id/tilAllwires"
+            android:layout_marginTop="30dp" />
+       <Spinner
+            android:id="@+id/spinner_hdmi"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:hint="All Wires">
+            android:layout_marginTop="30dp" />
+       <Spinner
+            android:id="@+id/spinner_power_adapter"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="30dp" />
 
-            <EditText
-                android:id="@+id/etwires"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:imeOptions="actionDone"
-                android:inputType="text"
-                android:maxLength="200" />
-        </com.google.android.material.textfield.TextInputLayout>
+       <Spinner
+            android:id="@+id/spinner_monitor_adapter"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="30dp" />
 
 
         <TextView

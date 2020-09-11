@@ -13,7 +13,7 @@
         android:orientation="vertical">
 
         <com.google.android.material.textfield.TextInputLayout
-            android:id="@+id/tilName"
+            android:id="@+id/til_Name"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:hint="Name">
@@ -22,12 +22,12 @@
                 android:id="@+id/etName"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:inputType="textCapWords"
-                android:imeOptions="actionNext"/>
+                android:imeOptions="actionNext"
+                android:inputType="textCapWords" />
         </com.google.android.material.textfield.TextInputLayout>
 
         <com.google.android.material.textfield.TextInputLayout
-            android:id="@+id/tilMobile"
+            android:id="@+id/til_Mobile"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:hint="Mobile Number"
@@ -38,72 +38,72 @@
                 android:id="@+id/etMobile"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
+                android:imeOptions="actionNext"
                 android:inputType="numberDecimal"
-                android:maxLength="10"
-                android:imeOptions="actionNext"/>
+                android:maxLength="10" />
         </com.google.android.material.textfield.TextInputLayout>
 
         <com.google.android.material.textfield.TextInputLayout
-            android:id="@+id/tilEmail"
+            android:id="@+id/til_other1"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:hint="Email ID">
+            android:hint="Other">
 
             <EditText
-                android:id="@+id/etEmail"
+                android:id="@+id/et_others1"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:inputType="textEmailAddress"
-                android:imeOptions="actionNext" />
+
+           />
         </com.google.android.material.textfield.TextInputLayout>
 
         <com.google.android.material.textfield.TextInputLayout
-            android:id="@+id/tilPassword"
+            android:id="@+id/tilothers2"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:hint="Password"
-            app:passwordToggleEnabled="true">
+            android:hint="others">
 
             <EditText
-                android:id="@+id/etPassword"
+                android:id="@+id/et_others2"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:inputType="textWebPassword"
-                android:imeOptions="actionNext" />
+                android:imeOptions="actionNext"
+             />
         </com.google.android.material.textfield.TextInputLayout>
 
         <com.google.android.material.textfield.TextInputLayout
-            android:id="@+id/tilConfirmPassword"
+            android:id="@+id/til_other3"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:hint="Confirm Password"
-            app:passwordToggleEnabled="true">
+            android:hint="others">
 
             <EditText
-                android:id="@+id/etConfirmPassword"
+                android:id="@+id/et_others3"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:inputType="textWebPassword"
-                android:imeOptions="actionDone" />
+                android:imeOptions="actionDone"
+            />
         </com.google.android.material.textfield.TextInputLayout>
+
         <TextView
-            android:id="@+id/tvError"
+            android:id="@+id/tv_product_Error"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:gravity="center"
-            android:textColor="#FA1A1A"
-            android:padding="5dp"/>
+            android:padding="5dp"
+            android:textColor="#FA1A1A" />
+
         <Button
-            android:id="@+id/btnCreateNewUser"
+            android:id="@+id/btnCreateNewAccessories"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:text="Create New User" />
-<!--        <TextView-->
-<!--            android:id="@+id/tvClear"-->
-<!--            android:layout_width="wrap_content"-->
-<!--            android:layout_height="wrap_content"-->
-<!--            android:layout_gravity="end"-->
-<!--            android:text="Clear all field"-->
-<!--            android:padding="5dp"/>-->
+            android:text="Create Accessories" />
+        <!--        <TextView-->
+        <!--            android:id="@+id/tvClear"-->
+        <!--            android:layout_width="wrap_content"-->
+        <!--            android:layout_height="wrap_content"-->
+        <!--            android:layout_gravity="end"-->
+        <!--            android:text="Clear all field"-->
+        <!--            android:padding="5dp"/>-->
     </LinearLayout>
 </androidx.core.widget.NestedScrollView>
