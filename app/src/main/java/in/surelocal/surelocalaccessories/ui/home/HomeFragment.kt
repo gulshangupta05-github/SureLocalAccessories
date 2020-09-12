@@ -100,8 +100,8 @@ class HomeFragment : SurelocalFragment() {
                         mAccessoriesId.add(it.documents[i].id)
                     }
 //                }
-                val spnAdapterAcc = ArrayAdapter(requireContext(), android.R.layout.simple_list_item_1, mAccessoriesName)
-                spinner_product_ADEF.adapter = spnAdapterAcc
+//                val spnAdapterAcc = ArrayAdapter(requireContext(), android.R.layout.simple_list_item_1, mAccessoriesName)
+//                spinner_product_ADEF.adapter = spnAdapterAcc
             }
         spinner_product_ADEF.onItemSelectedListener = object : AdapterView.OnItemSelectedListener {
             override fun onItemSelected(parent: AdapterView<*>?, view: View?, position: Int, id: Long) {

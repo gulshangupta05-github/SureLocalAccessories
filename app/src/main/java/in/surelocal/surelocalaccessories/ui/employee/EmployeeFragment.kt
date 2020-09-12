@@ -6,29 +6,26 @@ import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import androidx.fragment.app.Fragment
-import androidx.lifecycle.Observer
 import androidx.lifecycle.ViewModelProviders
 import `in`.surelocal.surelocalaccessories.R
-import `in`.surelocal.surelocalaccessories.datalayer.EmployeeItemGet
-import `in`.surelocal.surelocalaccessories.datalayer.EmployeeItemSet
 import android.content.Intent
 import android.util.Log
 import android.util.Patterns
 import android.widget.*
-import com.google.common.util.concurrent.Monitor
 import com.google.firebase.firestore.FirebaseFirestore
 import kotlinx.android.synthetic.main.fragment_employee.*
-import kotlinx.android.synthetic.main.fragment_employee.view.*
-import kotlinx.android.synthetic.main.fragment_home.*
-import java.util.regex.Pattern
+
 
 
 private const val TAG = "EmployeeFragment"
 
 class EmployeeFragment : Fragment() {
 
-
-    lateinit var data_holds: String
+    lateinit var monitor_data_holds: String
+    lateinit var hdmi_data_holds :String
+    lateinit var keyboard_mouse_data_holds :String
+    lateinit var power_adapter_data_holds :String
+    lateinit var monitor_adapter_data_holds :String
     private lateinit var firebase: FirebaseFirestore
     private lateinit var slideshowViewModel: EmployeeViewModel
     val monitor = arrayOf("select monitor", "1", "2", "3", "4")
@@ -53,66 +50,45 @@ class EmployeeFragment : Fragment() {
 
         firebase = FirebaseFirestore.getInstance()
 
-        val sName = etName.text.toString().trim()
-        val sMobile = etMobile.text.toString().trim()
-        val sEmail = etEmail.text.toString().trim()
-        val sEmpRoll = etEmproll.text.toString().trim()
-//            val sMonitor_model = et_monitor_model.text.toString().trim()
-//            val sKeyboard_mouse = et_keyboard_mouse.text.toString().trim()
-//            val sWires = etwires.text.toString().trim()
-        val doc_id = "$sName$sMobile"
-//        btnCreateEmployee.setOnClickListener {
-//            data_holds = firebase.collection("Employee_Accessories").document(doc_id).set(
-//                "doc_id" to doc_id,
-//            "user_name" to sName,
-//            "user_mobile" to sMobile,
-//            "user_email" to sEmail,
-//            "user_EmpRoll" to sEmpRoll
-//              "Monitor" to monitor,
-//                "keyboard" to keyboard_mouse,
-//                "Hdmi" to hdmi,
-//                "power_adapter" to power_adapter,
-//                "monitor_Adapter" to desktop_power_adapter
-//            )
-//        xx = doc_id
-//        if (isTrue(sName, sMobile, sEmail, sEmpRoll)) {
-//            tvError.text = ""
-//                val idss = "$sName$sMobile"
-//                firebase.collection("Employee_Accessories").document().set(
-//                    EmployeeItemSet(
-//                        doc_id = doc_id,
-//                        user_name = sName,
-//                        user_mobile = sMobile,
-//                        user_email = sEmail,
-//                        user_EmpRoll = sEmpRoll
-//                        user_monitor_modelno = sMonitor_model,
-//                        user_keyboard_mouse = sKeyboard_mouse,
-//                        user_allwires = sWires
-//                    )
-//                ).addOnSuccessListener {
-//                    btnCreateEmployee.text = "Uploading data..."
-//                    Toast.makeText(requireContext(), "user Created", Toast.LENGTH_LONG).show()
-//                    startActivity(Intent(requireContext(), MainActivity::class.java))
-//                    Log.d(TAG, "onActivityCreated: success $it")
-//                }
-//                    .addOnFailureListener {
-//                        Toast.makeText(requireContext(), "user creation failed", Toast.LENGTH_LONG)
-//                            .show()
-//                        Log.d(TAG, "onActivityCreated: failed ${it.message}")
-//                    }
-//        }
-//        }
-        tvClear.setOnClickListener {
-//            makeClearAllFields()
+        btnCreateEmployee.setOnClickListener {
+
+            val sName = etName.text.toString().trim()
+            val sMobile = etMobile.text.toString().trim()
+            val sEmail = etEmail.text.toString().trim()
+            val sEmpRoll = etEmproll.text.toString().trim()
+            val doc_id = "$sName$sMobile"
+            val timestamp = System.currentTimeMillis()
+            val data = hashMapOf(
+
+                "doc_id" to doc_id,
+                "user_name" to sName,
+                "user_mobile" to sMobile,
+                "user_email" to sEmail,
+                "user_EmpRoll" to sEmpRoll,
+                "Monitor" to monitor_data_holds,
+                "keyboard" to keyboard_mouse_data_holds,
+                "Hdmi" to hdmi_data_holds,
+                "power_adapter" to power_adapter_data_holds,
+                "monitor_Adapter" to monitor_adapter_data_holds
+            )
+            firebase.collection("Employee_Accessories").document(doc_id.toString()).set(data)
+                .addOnSuccessListener {
+                    btnCreateEmployee.text = "Uploading data..."
+                    Toast.makeText(requireContext(), "user Created", Toast.LENGTH_LONG).show()
+                    startActivity(Intent(requireContext(), MainActivity::class.java))
+                    Log.d(TAG, "onActivityCreated: success $it")
+                }
+                .addOnFailureListener {
+                    Toast.makeText(requireContext(),"${it.message}",Toast.LENGTH_SHORT).show()
         }
+
+    }
         allSpinner()
     }
 
+    fun allSpinner() {
 
-    private fun allSpinner() {
-
-        spinner_Monitor.adapter =
-            ArrayAdapter<String>(requireContext(), android.R.layout.simple_list_item_1, monitor)
+   spinner_Monitor.adapter= ArrayAdapter<String>(requireContext(), android.R.layout.simple_list_item_1, monitor)
         spinner_Monitor.onItemSelectedListener =
             object : AdapterView.OnItemSelectedListener {
                 override fun onItemSelected(
@@ -126,12 +102,10 @@ class EmployeeFragment : Fragment() {
                         0 -> {
                         }
                         else -> {
-
-                            data_holds = monitor[position]
-//                            val moni_tor=monitor[position]
-//                            firebase.collection("Employee_Accessories").document(xx).set("Monitor" to xx)
-                            Toast.makeText(requireContext(), "$data_holds", Toast.LENGTH_LONG).show()
-                            Log.d(TAG, "MONITOR LOG : ${data_holds}")
+                            monitor_data_holds = monitor[position]
+//                            val spinner_data_holds = monitor[position]
+                            Toast.makeText(requireContext(), "$monitor_data_holds", Toast.LENGTH_LONG).show()
+                            Log.d(TAG, "MONITOR LOG : ${monitor_data_holds}")
                         }
                     }
                 }
@@ -153,11 +127,8 @@ class EmployeeFragment : Fragment() {
                         0 -> {
                         }
                         else -> {
-                            data_holds = keyboard_mouse[position]
-                            val keyboard_mouse = keyboard_mouse[position]
-//                            firebase.collection("Employee_Accessories").document(xx).set("keyboard_mouse" to keyboard_mouse)
-                            Toast.makeText(requireContext(), "$data_holds", Toast.LENGTH_LONG)
-                                .show()
+                            keyboard_mouse_data_holds = keyboard_mouse[position]
+                            Toast.makeText(requireContext(), "$keyboard_mouse_data_holds", Toast.LENGTH_LONG).show()
                         }
                     }
                 }
@@ -176,10 +147,8 @@ class EmployeeFragment : Fragment() {
                     0 -> {
                     }
                     else -> {
-                        data_holds = hdmi[position]
-//                        val hdmi = hdmi[position]
-//                        firebase.collection("Employee_Accessories").document(xx).set("Hdmi" to xx)
-                        Toast.makeText(requireContext(), "$data_holds", Toast.LENGTH_LONG).show()
+                        hdmi_data_holds = hdmi[position]
+                        Toast.makeText(requireContext(), "$hdmi_data_holds", Toast.LENGTH_LONG).show()
                     }
                 }
             }
@@ -200,10 +169,9 @@ class EmployeeFragment : Fragment() {
                     0 -> {
                     }
                     else -> {
-                        data_holds = power_adapter[position]
-//                        val power_adapter = power_adapter[position]
-//                        firebase.collection("Employee_Accessories").document(xx).set("power_adapter" to xx)
-                        Toast.makeText(requireContext(), "$data_holds", Toast.LENGTH_LONG).show()
+                        power_adapter_data_holds = power_adapter[position]
+                        val power_adapter = power_adapter[position]
+                        Toast.makeText(requireContext(), "$power_adapter_data_holds", Toast.LENGTH_LONG).show()
                     }
                 }
             }
@@ -226,10 +194,8 @@ class EmployeeFragment : Fragment() {
                         0 -> {
                         }
                         else -> {
-                            data_holds = monitor[position]
-                            val monitor_adapter = desktop_power_adapter[position]
-                            Toast.makeText(requireContext(), monitor_adapter, Toast.LENGTH_LONG)
-                                .show()
+                            monitor_adapter_data_holds = desktop_power_adapter[position]
+                            Toast.makeText(requireContext(), monitor_adapter_data_holds, Toast.LENGTH_LONG).show()
                         }
                     }
                 }
@@ -302,3 +268,33 @@ class EmployeeFragment : Fragment() {
 //    mUserName.add(temp!!.user_name)
 //    mUserId.add(it.documents[i].id)
 //}
+
+
+//        xx = doc_id
+//        if (isTrue(sName, sMobile, sEmail, sEmpRoll)) {
+//            tvError.text = ""
+//                val idss = "$sName$sMobile"
+//                firebase.collection("Employee_Accessories").document().set(
+//                    EmployeeItemSet(
+//                        doc_id = doc_id,
+//                        user_name = sName,
+//                        user_mobile = sMobile,
+//                        user_email = sEmail,
+//                        user_EmpRoll = sEmpRoll
+//                        user_monitor_modelno = sMonitor_model,
+//                        user_keyboard_mouse = sKeyboard_mouse,
+//                        user_allwires = sWires
+//                    )
+//                ).addOnSuccessListener {
+//                    btnCreateEmployee.text = "Uploading data..."
+//                    Toast.makeText(requireContext(), "user Created", Toast.LENGTH_LONG).show()
+//                    startActivity(Intent(requireContext(), MainActivity::class.java))
+//                    Log.d(TAG, "onActivityCreated: success $it")
+//                }
+//                    .addOnFailureListener {
+//                        Toast.makeText(requireContext(), "user creation failed", Toast.LENGTH_LONG)
+//                            .show()
+//                        Log.d(TAG, "onActivityCreated: failed ${it.message}")
+//                    }
+//        }
+//        }

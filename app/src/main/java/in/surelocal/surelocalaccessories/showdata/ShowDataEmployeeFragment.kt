@@ -56,15 +56,19 @@ class ShowDataEmployeeFragment(
                 tv_emp_role.text = it.data!!["user_EmpRoll"].toString()
                 tv_monitor_model.text = it.data!!["user_monitor_modelno"].toString()
                 tv_key_mouse.text = it.data!!["user_keyboard_mouse"].toString()
-                tv_all_wires.text = it.data!!["user_allwires"].toString()
-//                tv_doc_id_get.text = it.data!!["doc_id"].toString()
+                tv_monitor_model.text = it.data!!["Monitor"].toString()
+                tv_key_mouse.text = it.data!!["keyboard"].toString()
+                tv_hdmi.text = it.data!!["Hdmi"].toString()
+                tv_power_adapter.text = it.data!!["power_adapter"].toString()
+                tv_desktop_power_adapter.text = it.data!!["monitor_Adapter"].toString()
+
             }.addOnFailureListener {
                 Log.d(TAG, "onActivityCreated: ${it.message}")
             }
 
         et_edit_employee.setOnClickListener {
 //            startActivity(Intent(requireContext(),EmployeeFragment::class.java))
-            val intent = Intent(requireContext(),EmployeeFragment::class.java)
+            val intent = Intent(requireContext(), EmployeeFragment::class.java)
             startActivity(intent)
         }
 

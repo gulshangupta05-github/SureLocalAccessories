@@ -9,100 +9,265 @@
         android:layout_height="match_parent"
         tools:context=".showdata.ShowDataFragment">
 
-        <TextView
-            android:id="@+id/tv_name"
+        <LinearLayout
+            android:id="@+id/linear_name"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_marginTop="20dp"
-            android:gravity="center_horizontal"
-            android:text="Name"
-            android:textAlignment="center"
-            android:textColor="#000"
-            android:textSize="25dp" />
+            android:orientation="horizontal">
 
-        <TextView
-            android:id="@+id/tv_mobile"
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Name : "
+                android:textColor="#000"
+                android:textSize="25dp" />
+
+            <TextView
+                android:id="@+id/tv_name"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:gravity="center_horizontal"
+                android:text="Name"
+                android:textAlignment="center"
+                android:textColor="#000"
+                android:textSize="25dp" />
+        </LinearLayout>
+
+
+        <LinearLayout
+            android:id="@+id/linear_mobile"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:layout_below="@+id/tv_name"
-            android:gravity="center_horizontal"
-            android:text="Mobile"
-            android:textAlignment="center"
-            android:textColor="#3C3333"
-            android:textSize="13dp" />
+            android:layout_below="@+id/linear_name"
+            android:orientation="horizontal">
 
-        <TextView
-            android:id="@+id/tv_email"
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Mobile : "
+                android:textColor="#000"
+                android:textSize="25dp" />
+
+            <TextView
+                android:id="@+id/tv_mobile"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_below="@+id/tv_name"
+                android:gravity="center_horizontal"
+                android:text="Mobile"
+                android:textAlignment="center"
+                android:textColor="#3C3333"
+                android:textSize="25dp" />
+        </LinearLayout>
+
+        <LinearLayout
+            android:id="@+id/linear_email"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:layout_below="@+id/tv_mobile"
-            android:layout_marginTop="5dp"
-            android:gravity="center_horizontal"
-            android:text="Email"
-            android:textAlignment="center"
-            android:textColor="#884141" />
+            android:layout_below="@+id/linear_mobile"
+            android:orientation="horizontal">
 
-        <TextView
-            android:id="@+id/tv_emp_role"
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Email : "
+                android:textColor="#000"
+                android:textSize="25dp" />
+
+            <TextView
+                android:id="@+id/tv_email"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_below="@+id/tv_mobile"
+                android:layout_marginTop="5dp"
+                android:gravity="center_horizontal"
+                android:text="Email"
+                android:textAlignment="center"
+                android:textColor="#884141" />
+        </LinearLayout>
+
+        <LinearLayout
+            android:id="@+id/linear_employee"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/linear_email"
+            android:orientation="horizontal">
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Employee Role : "
+                android:textColor="#000"
+                android:textSize="25dp" />
+
+            <TextView
+                android:id="@+id/tv_emp_role"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_below="@+id/tv_email"
+                android:layout_marginTop="5dp"
+                android:gravity="center_horizontal"
+                android:text="Employee Roll"
+                android:textAlignment="center"
+                android:textColor="#000"
+                android:textSize="18dp" />
+        </LinearLayout>
+
+        <LinearLayout
+            android:id="@+id/linear_monitor_qty"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:layout_below="@+id/tv_email"
-            android:layout_marginTop="5dp"
-            android:gravity="center_horizontal"
-            android:text="Employee Roll"
-            android:textAlignment="center"
-            android:textColor="#000"
-            android:textSize="18dp" />
+            android:layout_below="@+id/linear_employee"
+            android:orientation="horizontal">
 
-        <TextView
-            android:id="@+id/tv_monitor_model"
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Monitor  : "
+                android:textColor="#000"
+                android:textSize="25dp" />
+
+            <TextView
+                android:id="@+id/tv_monitor_model"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_below="@+id/tv_emp_role"
+                android:layout_marginTop="5dp"
+                android:gravity="center_horizontal"
+                android:text="Monitor / Model no"
+                android:textAlignment="center"
+                android:textColor="#000"
+                android:textSize="18dp" />
+        </LinearLayout>
+
+        <LinearLayout
+            android:id="@+id/linear_keyboard_mouse"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:layout_below="@+id/tv_emp_role"
-            android:layout_marginTop="5dp"
-            android:gravity="center_horizontal"
-            android:text="Monitor / Model no"
-            android:textAlignment="center"
-            android:textColor="#000"
-            android:textSize="18dp" />
+            android:layout_below="@+id/linear_monitor_qty"
+            android:orientation="horizontal">
 
-        <TextView
-            android:id="@+id/tv_key_mouse"
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Kyeboard Mouse : "
+                android:textColor="#000"
+                android:textSize="25dp" />
+
+            <TextView
+                android:id="@+id/tv_key_mouse"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:gravity="center_horizontal"
+                android:text="KeyBoard and mouse model no"
+                android:textAlignment="center"
+                android:textColor="#000"
+                android:textSize="18dp" />
+        </LinearLayout>
+
+
+        <LinearLayout
+            android:id="@+id/linear_hdmi"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:layout_below="@+id/tv_monitor_model"
-            android:layout_marginTop="5dp"
-            android:gravity="center_horizontal"
-            android:text="KeyBoard and mouse model no"
-            android:textAlignment="center"
-            android:textColor="#000"
-            android:textSize="18dp" />
+            android:layout_below="@+id/linear_keyboard_mouse"
+            android:orientation="horizontal">
 
-        <TextView
-            android:id="@+id/tv_all_wires"
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="HDMI : "
+                android:textColor="#000"
+                android:textSize="25dp" />
+
+            <TextView
+                android:id="@+id/tv_hdmi"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:gravity="center_horizontal"
+                android:text="HDMI"
+                android:textAlignment="center"
+                android:textColor="#000"
+                android:textSize="18dp" />
+        </LinearLayout>
+
+        <LinearLayout
+            android:id="@+id/linear_power_adapter"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:layout_below="@+id/tv_key_mouse"
-            android:layout_marginTop="5dp"
-            android:gravity="center_horizontal"
-            android:text="All wires"
-            android:textAlignment="center"
-            android:textColor="#000"
-            android:textSize="18dp" />
+            android:layout_below="@+id/linear_hdmi"
+            android:orientation="horizontal">
 
-        <Button
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Power Adapter : "
+                android:textColor="#000"
+                android:textSize="25dp" />
+
+            <TextView
+                android:id="@+id/tv_power_adapter"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:gravity="center_horizontal"
+                android:text="power adapter"
+                android:textAlignment="center"
+                android:textColor="#000"
+                android:textSize="18dp" />
+
+        </LinearLayout>
+
+
+        <LinearLayout
+            android:id="@+id/linear_desktop_power_cable"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:layout_below="@+id/tv_all_wires"
-            android:layout_marginStart="10dp"
-            android:layout_marginLeft="10dp"
-            android:layout_marginTop="43dp"
-            android:layout_marginEnd="10dp"
-            android:layout_marginRight="10dp"
-            android:layout_marginBottom="10dp"
-            android:id="@+id/et_edit_employee"
-            android:background="#53A844"
-            android:text="Edit Employee Form" />
+            android:layout_below="@+id/linear_power_adapter"
+            android:orientation="horizontal">
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Desktop Power Adapter : "
+                android:textColor="#000"
+                android:textSize="25dp" />
+
+            <TextView
+                android:id="@+id/tv_desktop_power_adapter"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:gravity="center_horizontal"
+                android:text="desktop power adapter"
+                android:textAlignment="center"
+                android:textColor="#000"
+                android:textSize="18dp" />
+        </LinearLayout>
+        <!--        <TextView-->
+        <!--            android:id="@+id/tv_all_wires"-->
+        <!--            android:layout_width="match_parent"-->
+        <!--            android:layout_height="wrap_content"-->
+        <!--            android:layout_below="@+id/tv_key_mouse"-->
+        <!--            android:layout_marginTop="5dp"-->
+        <!--            android:gravity="center_horizontal"-->
+        <!--            android:text="All wires"-->
+        <!--            android:textAlignment="center"-->
+        <!--            android:textColor="#000"-->
+        <!--            android:textSize="18dp" />-->
+
+                <Button
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_below="@+id/linear_power_adapter"
+                    android:layout_marginStart="10dp"
+                    android:layout_marginLeft="10dp"
+                    android:layout_marginTop="43dp"
+                    android:layout_marginEnd="10dp"
+                    android:layout_marginRight="10dp"
+                    android:layout_marginBottom="10dp"
+                    android:id="@+id/et_edit_employee"
+                    android:background="#53A844"
+                    android:text="Edit Employee Form" />
         <!--        <TextView-->
         <!--            android:layout_width="wrap_content"-->
         <!--            android:layout_height="wrap_content"-->
